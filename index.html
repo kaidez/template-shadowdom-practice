@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JavaScript Books</title>
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="container">
+    <h1 class="page-header">JavaScript Books</h1>
+
+    <!-- start template -->
+    <template id="singleBook">
+      <style>
+        
+        /*
+         * use something like Polymer & you don't need to use 
+         * "@import"
+         */
+        @import url("css/bootstrap.min.css");
+        @import url("css/normalize.min.css");
+
+        .templateArticle {
+          display: inline-block;
+          margin: 6px;
+        }
+
+        .btn {
+          margin: 10px;
+          float: right;
+        }
+
+        .thumbnail {
+          margin-bottom: 0;
+        }
+
+        .bookTitleClass {
+          text-align: left;
+        }
+        #bookTitle {
+          font-style: italic;
+        }
+
+      </style>
+
+      <article class="templateArticle panel panel-default">
+        <header class="panel-heading">
+          <h2 class="panel-title bookTitleClass">
+            <p>
+              <span id="bookTitle"></span>
+              <br />
+              by <span id="bookAuthor"></span>
+            </p>
+          </h2>
+        </header>
+        <img src="" alt="" class="thumbnail">
+        <a href="" id="btnPurchase" class="btn btn-primary" role="button" target="blank">Buy at Amazon</a>
+      </article>
+    </template> <!-- #singleBook -->
+
+    <section id="allBooks" class="allBooksClass"></section>
+
+    <footer role="contentinfo">
+      <small>Open source, guys...use the code how you want to!!! But if you buy any of these books through the "Buy at Amazon" links, you're making me money!!!</small>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+  </div> <!-- #container-->
+</body>
+</html>
