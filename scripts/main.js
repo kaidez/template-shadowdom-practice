@@ -55,8 +55,15 @@
     // Add amazonLink data to href in "#btnPurchase" in <template>
     templateContent.querySelector("#btnPurchase").href = amazonLink;
 
-    // Copy all the template content & place it in the Shadow Root
+    // Copy JUST the <article> tag content & place it in the Shadow Root
     root.appendChild(document.importNode(templateContent.querySelector(".templateArticle"), true));
   }
+
+  /*
+   * Copy JUST the <style> tag content & place it in the Shadow Root.
+   * This is done OUTSIDE the "for...in" loop so that the <style> tag
+   * doesn't get duplicated every time it iterates.
+   */
   root.appendChild(document.importNode(templateContent.querySelector("style"), true));
+
 })();
