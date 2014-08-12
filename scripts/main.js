@@ -56,7 +56,7 @@
     templateContent.querySelector("#btnPurchase").href = amazonLink;
 
     // Copy all the template content & place it in the Shadow Root
-    root.appendChild(document.importNode(templateContent, true));
+    root.appendChild(document.importNode(templateContent.querySelector(".templateArticle"), true));
   }
-
+  root.appendChild(document.importNode(templateContent.querySelector("style"), true));
 })();
