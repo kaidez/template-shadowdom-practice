@@ -32,7 +32,15 @@
   var template = document.querySelector("#singleBook"),
     templateContent = template.content,
     host = document.querySelector("#allBooks"),
-    root = host.createShadowRoot(); // "#allBooks" is the Shadow Root
+    root = host.createShadowRoot();
+    /*
+     * A cool trick: uncomment the 2 console.log statements below to
+     * see what the 'host' and 'root' variables look like when
+     * rendered!!!
+     */
+
+    // console.log(host);
+    // console.log(root);
 
   // Use a for...in loop to load "jsBooks" data in  <template>
   for (key in jsBooks) {
@@ -55,7 +63,10 @@
     // Add amazonLink data to href in "#btnPurchase" in <template>
     templateContent.querySelector("#btnPurchase").href = amazonLink;
 
-    // Copy JUST the <article> tag content & place it in the Shadow Root
+    /*
+     * Copy JUST the <article> tag content & place it in the Shadow 
+     * Root
+     */
     root.appendChild(document.importNode(templateContent.querySelector(".templateArticle"), true));
   }
 
